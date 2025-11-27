@@ -1,25 +1,17 @@
+---
+
 # Shai-hulud 2.0 — Threat Intelligence Package Scanner
 
-**Shai-hulud 2.0** is a fast, intelligence-driven scanner designed to detect compromised Python packages within any project directory.
-It aggregates live data from multiple threat-intel sources to quickly identify malicious packages, suspicious versions, and potential supply-chain risks.
+Shai-hulud 2.0 is a lightweight, intelligence-driven scanner designed to detect compromised Python packages within any project directory.
+It retrieves live data from five threat-intelligence sources and identifies malicious versions, suspicious packages, and recommended fixes.
 
 ---
 
-## Features
-
-* Unified threat-intelligence from five independent sources
-* Static and live analysis of installed or referenced packages
-* Identification of known malicious version ranges
-* Environment, project, and CI/CD–friendly scanning
-* Clear remediation guidance
-
----
-
-## Getting Started
+## Installation & Setup
 
 ### 1. Download the ZIP
 
-Download the latest version from the repository:
+Download the latest release from the repository:
 
 [https://github.com/ccievks/Ccievks-Threatintel-Repo/tree/main/Shai-hulud-2.0](https://github.com/ccievks/Ccievks-Threatintel-Repo/tree/main/Shai-hulud-2.0)
 
@@ -27,13 +19,11 @@ Download the latest version from the repository:
 
 ### 2. Extract the Package
 
-Unzip the archive into any working directory of your choice.
+Unzip the downloaded archive into any working directory.
 
 ---
 
 ### 3. Install Dependencies
-
-Open a terminal inside the extracted folder and run:
 
 ```bash
 pip install -r requirements.txt
@@ -41,25 +31,47 @@ pip install -r requirements.txt
 
 ---
 
-### 4. Run the Scanner
+## Running the Scanner
 
-Specify the path to the project you want to analyze:
+To scan a project, point the detector at the project’s root directory:
 
 ```bash
 python shai_hulud_detector.py --path /your/project/root
 ```
 
+Example:
+
+```bash
+python shai_hulud_detector.py --path ./my_application
+```
+
 ---
 
-### 5. Review the Results
+## Understanding the Results
 
-After scanning, the tool will provide:
+After scanning, you will receive:
 
-* Newly identified compromised packages
-* Packages detected within your project or environment
-* Malicious or suspicious version ranges
-* Recommended remediation steps
+### • Compromised Packages
 
-This output helps determine whether your system, repository, or CI pipeline is at risk.
+Packages the threat-intel feeds identify as malicious or involved in known attacks.
+
+### • Detected Packages
+
+Packages found in your project or environment during analysis.
+
+### • Malicious Version Ranges
+
+Specific version numbers or ranges that are known to be compromised.
+
+### • Recommended Remediation
+
+Actions such as:
+
+* Updating to safe versions
+* Removing malicious dependencies
+* Reviewing your dependency chain
+* Validating your environment or CI pipeline
+
+These findings help you quickly determine if your software or CI/CD pipeline is at risk.
 
 ---
