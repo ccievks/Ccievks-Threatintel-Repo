@@ -1,0 +1,27 @@
+How to Run the Detector
+Step 1 — Download the ZIP
+
+From the repo:
+https://github.com/ccievks/Ccievks-Threatintel-Repo/tree/main/Shai-hulud-2.0
+
+Step 2 — Extract
+Unzip the file into any working directory.
+
+Step 3 — Install dependencies
+Inside the extracted folder:
+
+pip install -r requirements.txt
+
+Step 4 — Run the scanner
+Point it at your project directory:
+
+python shai_hulud_detector.py --path /your/project/root
+
+Step 5 — Review results
+The scanner will fetch live intelligence from all 5 threat intel sources and report:
+
+Newly compromised packages
+Packages found in your environment
+Detected malicious version ranges
+Recommended remediation actions
+This gives instant clarity on whether your project or CI pipeline is exposed.
